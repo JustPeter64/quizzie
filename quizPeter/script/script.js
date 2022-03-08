@@ -32,13 +32,15 @@ let quistions = [
     question: "Is deze opdract leuk?",
     answers: [
       {option:"Nee",answer:false},
-      {option:"Ja",answer:true}
+      {option:"Ja",answer:true},
+      {option:"meschien!",answer:false}
     ]
   },
   {
     question: "Ja of Nee?",
     answers: [
       {option:"Nee",answer:false},
+      {option:"of",answer:false},
       {option:"Ja",answer:true}
     ]
   },
