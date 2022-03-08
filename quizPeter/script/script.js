@@ -4,6 +4,7 @@ const nextBtn = document.getElementById('next');
 const submitBtn = document.getElementById('submit');
 const trueBtn = document.getElementById('true');
 const falseBtn = document.getElementById('false');
+const false2Btn = document.getElementById('false2');
 const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
 
@@ -15,13 +16,15 @@ let quistions = [
     question: "Waar staat het GLR?",
     answers: [
       {option:"Rotterdam!",answer:true},
-      {option:"Amsterdam!",answer:false}
+      {option:"Amsterdam!",answer:false},
+      {option:"Utrecht!",answer:false}
     ]
   },
   {
     question: "Welke dag komt na maandag?",
     answers: [
-      {option:"Woensdag!!",answer:false},
+      {option:"Woensdag!",answer:false},
+      {option:"Zaterdag!",answer:false},
       {option:"Dinsdag!",answer:true}
     ]
   },
@@ -117,6 +120,20 @@ function beginQuiz(){
       next();
     }
   }
+  false2Btn.innerHTML = quistions[currentQuestion].answers[2].option;
+  false2Btn.onclick = () => {
+    let ano=1;
+    if(quistions[currentQuestion].answers[ano].answer){
+      if(score<10){
+        score++;
+      }
+    }
+    userScore.innerHTML = score;
+    if(currentQuestion<9){
+      next();
+    }
+  }
+  
   prevBtn.classList.add('hide');
 }
 
@@ -167,6 +184,19 @@ function next(){
       next();
     }
   }
+  false2Btn.innerHTML = quistions[currentQuestion].answers[2].option;
+  false2Btn.onclick = () => {
+    let ano=1;
+    if(quistions[currentQuestion].answers[ano].answer){
+      if(score<10){
+        score++;
+      }
+    }
+    userScore.innerHTML = score;
+    if(currentQuestion<9){
+      next();
+    }
+  }
   prevBtn.classList.remove('hide');
 }
 
@@ -203,6 +233,19 @@ function prev(){
       next();
     }
   }
+  false2Btn.innerHTML = quistions[currentQuestion].answers[2].option;
+  false2Btn.onclick = () => {
+    let ano=1;
+    if(quistions[currentQuestion].answers[ano].answer){
+      if(score<10){
+        score++;
+      }
+    }
+    userScore.innerHTML = score;
+    if(currentQuestion<9){
+      next();
+    }
+  }
   nextBtn.classList.remove('hide');
 }
 
@@ -212,5 +255,6 @@ function submit(){
   submitBtn.classList.add('hide');
   trueBtn.classList.add('hide');
   falseBtn.classList.add('hide');
+  false2Btn.classList.add('hide');
   questionText.innerHTML = "Quiz is done!"
 }
