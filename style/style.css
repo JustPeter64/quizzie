@@ -1,0 +1,139 @@
+:root {
+    --color1: #48CAE4;
+    --color2: #90E0EF;
+    --color3: #CAF0F8;
+    --colorTop: #0077B6;
+    --colorChild:#00b4d8;
+    --colorHover: #f9d79f;
+    --colorFont: black;
+    --colorBorder: #ffa91f;
+}
+
+@font-face {
+    font-family: quizzie;
+    src: url(../media/d-denyut-font/Denyut-z8q1G.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--colorFont);
+    font-family: quizzie;
+}
+
+body{
+    background: linear-gradient(to right, var(--color1),var(--color2),var(--color3));
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+div.parent{
+    display: flex;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    vertical-align:middle;
+}
+div.child{
+    width: 30%;
+    height: 125px;
+    background: var(--colorChild);
+    box-sizing: border-box;
+    border: 2px solid var(--colorBorder);
+    border-radius: 40px;
+    margin-left: 20px;
+    text-align: center; 
+    padding:  40px;
+    font-size: 2.5em;
+}
+div.child:hover{
+    background-color: var(--colorHover);
+}
+
+
+/* header */
+
+#box {
+    display: grid;
+    place-items: center;
+    height: 10vh;
+    margin-bottom: 10vh;
+}
+
+#top {
+    font-family: quizzie;
+    font-size: 6rem;
+    text-align: center;
+    background-color: var(--colorTop);
+    border-radius: 0 0 60px 60px;
+    border-bottom: 5px solid var(--colorBorder);
+    padding: 1%;
+    width: 50%;
+    color: var(--colorFont);
+}
+
+/* footer */
+
+section{
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to right, #48CAE4,#90E0EF,#CAF0F8);
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg");
+    background-size: 1600px 198;
+}
+
+.wave1{
+    animation: animate-wave-1 10s linear infinite; 
+    z-index: 1000;
+    opacity: 1; 
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+.wave2{
+    animation: animate-wave-2 5s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+.wave3{
+    animation: animate-wave-3 10s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+.wave4{
+    animation: animate-wave-4 10s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px; 
+}
+
+@keyframes animate-wave-1{0% {background-position-x: 0;}
+    100% {background-position-x: 1600px;}
+}
+
+@keyframes animate-wave-2{0% {background-position-x: 0;}
+    100% {background-position-x: -1600px;}
+}
+
+@keyframes animate-wave-3{0% {background-position-x: 0;}
+    100% {background-position-x: 1600px;}
+}
+
+@keyframes animate-wave-4{0% {background-position-x: 0;}
+    100% {background-position-x: -1600px;}
+}
