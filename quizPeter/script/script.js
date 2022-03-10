@@ -48,6 +48,7 @@ let quistions = [
     question: "Wie heeft deze quiz gemaakt?",
     answers: [
       {option:"Remco",answer:false},
+      {option: "Quillan",answer:false},
       {option:"Peter",answer:true}
     ]
   },
@@ -55,6 +56,7 @@ let quistions = [
     question: "is dit een testvraag?",
     answers: [
       {option:"Nee",answer:false},
+      {option:"hopelijk",answer:false},
       {option:"Ja",answer:true}
     ]
   },
@@ -62,13 +64,15 @@ let quistions = [
     question: "Is Nederland klein?",
     answers: [
       {option:"Nee",answer:false},
-      {option:"Ja",answer:true}
+      {option:"Relatief",answer:true},
+      {option:"Ja",answer:false}
     ]
   },
   {
     question: "Amerika is groot?",
     answers: [
       {option:"Nee",answer:false},
+      {option:"Relatief",answer:false},
       {option:"Ja",answer:true}
     ]
   },
@@ -76,14 +80,16 @@ let quistions = [
     question: "Bij de laaste 8 vragen is het antwoord altijd waar",
     answers: [
       {option:"Nee",answer:false},
-      {option:"Ja",answer:true}
+      {option:"Ja",answer:false},
+      {option:"Niet meer",answer:true}
     ]
   },
   {
     question: "Dit is de laaste vraag?",
     answers: [
       {option:"Nee",answer:false},
-      {option:"Ja",answer:true}
+      {option:"Ja",answer:true},
+      {option:"he he",answer:false}
     ]
   }
 ]
@@ -105,7 +111,7 @@ function beginQuiz(){
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
@@ -118,20 +124,20 @@ function beginQuiz(){
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
   false2Btn.innerHTML = quistions[currentQuestion].answers[2].option;
   false2Btn.onclick = () => {
-    let ano=1;
+    let ano=2;
     if(quistions[currentQuestion].answers[ano].answer){
       if(score<10){
         score++;
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
@@ -148,6 +154,7 @@ function restart(){
   submitBtn.classList.remove('hide');
   trueBtn.classList.remove('hide');
   falseBtn.classList.remove('hide');
+  false2Btn.classList.remove('hide');
   score =0;
   userScore.innerHTML = score;
   beginQuiz();
@@ -155,7 +162,7 @@ function restart(){
 
 function next(){
   currentQuestion++;
-  if(currentQuestion>=9){
+  if(currentQuestion>=10){
     nextBtn.classList.add('hide');
     prevBtn.classList.remove('hide');
   }
@@ -169,7 +176,7 @@ function next(){
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
@@ -182,20 +189,20 @@ function next(){
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
   false2Btn.innerHTML = quistions[currentQuestion].answers[2].option;
   false2Btn.onclick = () => {
-    let ano=1;
+    let ano=2;
     if(quistions[currentQuestion].answers[ano].answer){
       if(score<10){
         score++;
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
@@ -204,7 +211,7 @@ function next(){
 
 function prev(){
   currentQuestion--;
-  if(currentQuestion>=0){
+  if(currentQuestion>=10){
     nextBtn.classList.remove('hide');
     prevBtn.classList.add('hide');
   }
@@ -218,7 +225,7 @@ function prev(){
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
@@ -231,20 +238,20 @@ function prev(){
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
   false2Btn.innerHTML = quistions[currentQuestion].answers[2].option;
   false2Btn.onclick = () => {
-    let ano=1;
+    let ano=2;
     if(quistions[currentQuestion].answers[ano].answer){
       if(score<10){
         score++;
       }
     }
     userScore.innerHTML = score;
-    if(currentQuestion<9){
+    if(currentQuestion<10){
       next();
     }
   }
